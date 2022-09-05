@@ -1,4 +1,6 @@
 const options = ['rock', 'paper', 'scissors'];
+var playerScore = 0;
+var computerScore = 0;
 
 const getComputerChoice = () => {
     return options[Math.floor(Math.random()*3)]
@@ -37,12 +39,12 @@ const playRound = (playerSelection, computerSelection=getComputerChoice()) => {
 };
 
 const game = () =>  {
-    var playerScore = 0;
-    var computerScore = 0;
     for (let i = 0; i < 5; i++){
         playerInput = window.prompt('Enter paper, scissors, or rock.')
         console.log(playRound(playerInput));
     }
+    return playerScore > computerScore ? console.log("You Won the Match!") : console.log("You lost the Match!")
 }
+
 
 game()
