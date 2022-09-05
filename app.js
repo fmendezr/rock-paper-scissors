@@ -11,27 +11,38 @@ const playRound = (playerSelection, computerSelection=getComputerChoice()) => {
     switch(playerSelection.toLowerCase()){
         case "rock":
             if (computerSelection === 'paper'){
+                computerScore += 1;
                 return "You Lose! Paper beats Rock"
             } else {
+                playerScore += 1;
                 return "You Win! Rock beats Scisssors"
             };
         case "paper":
             if (computerSelection === "scissors"){
+                computerScore += 1;
                 return "You Lose! Scissors beats Paper"
             } else {
+                playerScore += 1;
                 return "You Win! Paper beats Rock"
             };
         case "scissors":
             if (computerSelection === "rock"){
+                computerScore += 1;
                 return "You Loose! Rock beats Scissors"
             } else {
+                playerScore += 1;
                 return "You Win! Scissors beats Paper"
             };
     }; 
 };
 
 const game = () =>  {
+    var playerScore = 0;
+    var computerScore = 0;
     for (let i = 0; i < 5; i++){
-        console.log(playRound("rock"));
+        playerInput = window.prompt('Enter paper, scissors, or rock.')
+        console.log(playRound(playerInput));
     }
 }
+
+game()
