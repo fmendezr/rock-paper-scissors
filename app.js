@@ -13,7 +13,7 @@ const playRound = (playerSelection, computerSelection=getComputerChoice()) => {
             if (computerSelection === 'paper'){
                 return "You Lose! Paper beats Rock"
             } else {
-                return "You Win! Paper beats Scissors"
+                return "You Win! Rock beats Scisssors"
             };
         case "paper":
             if (computerSelection === "scissors"){
@@ -30,3 +30,8 @@ const playRound = (playerSelection, computerSelection=getComputerChoice()) => {
     }; 
 };
 
+const game = () =>  {
+    for (let i = 0; i < 5; i++){
+        console.log(playRound("rock"));
+    }
+}
